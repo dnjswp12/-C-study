@@ -1,0 +1,54 @@
+에러가 발생하는 상황
+
+
+-
+test.h
+
+#define Error (10)
+const char test_var[Error] = {1,2,3,4,5};
+
+test.c
+
+#include <stdio.h>
+#include "test.h"
+
+void c();
+
+int main()
+{
+  int i;
+  
+  for( i=0;i<Error; i++)
+  {
+    printf("i %= i \n",i)
+  }
+}
+------------------------------------------------------------
+
+헤더 파일에서는 변수나 함수 선언만 하고 값을 초기화 하면안된다. 
+위와 같이 헤더 파일에서 초기화를 하면 에러가 발생하게 된다. 
+따라서 헤더 파일에는 아래와 같이 선언만 해주고, 초기화는 함수내에서 해줘야한다. 
+
+
+test.h
+
+#define Error (10)
+const char test_var[Error];
+
+test.c
+
+#include <stdio.h>
+#include "test.h"
+
+void c();
+
+int main()
+{
+  int i;
+  const char test_var[Error] = {1,2,3,4,5};
+  
+  for( i=0;i<Error; i++)
+  {
+    printf("i %= i \n",i)
+  }
+}
