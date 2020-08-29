@@ -1,0 +1,13 @@
+warning: operation on '~~' may be undefined
+
+해당 오류는 의도가 명확하지 않은 코드를 "정의되지 않은 행동(undefined behavior)"라고 한다. 
+
+컴파일러 마다 결과가 달라질수 있어, 이런식의 코드 작성은 피해야한다. 
+
+아래와 같은 경우이다. 
+
+-
+
+int i = 0;
+
+i=i++;
