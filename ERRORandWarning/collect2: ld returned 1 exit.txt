@@ -1,0 +1,1 @@
+collect2: ld returned 1 exit status"는 링커가 정상적으로 종료하지 않았다는 것.
