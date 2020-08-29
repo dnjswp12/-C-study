@@ -1,0 +1,33 @@
+원인으로는 첫번째, call하는 함수의 실제 구현 부분을 찾을 수 없어서 발생한다. 
+
+ 
+
+--> 정의는 되어있으나, 구현된 것을 찾을 수 없으므로 구현되어있는 함수 라이브러리를 링크 시켜준다. 
+
+ 
+
+나는 두번째의 경우로 문제를 해결했는데 cpp파일에서 C에 있는 함수를 call할 때 발생한다. 
+
+ 
+
+c에 구현되어있는 함수의 정의가 적혀있는 헤더 파일에 다음과 같이 추가해준다. 
+
+ 
+
+#ifdef _FILENAME_H_
+
+#define _FILENAME_H_
+
+extern typ_cantx_Var const *const ptr_Cantx;
+#ifdef __cpluspluse
+extern "C"
+{
+#endif
+/*정의 된 함수 추가*/
+#ifdef __cpluspluse
+}
+#endif
+
+ 
+
+#endif /*_FILENAME_H_*/
