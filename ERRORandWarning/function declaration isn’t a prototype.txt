@@ -1,0 +1,17 @@
+Warning: function declaration isn’t a prototype 다음과 같은 오류는 
+
+ 
+
+Void init()
+
+{
+
+...
+
+}
+
+과 같은 함수에서 발생 할수 있다. 
+
+ 
+
+해결 방법은 void init(void)를 추가 함으로써 해결 가능하다. 
